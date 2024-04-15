@@ -61,7 +61,7 @@ export default function Home() {
   // Function to generate text file content
   const generateTextFileContent = () => {
     const coordinates = [];
-    for (let i = 0; i < buttonColors.length; i++) {
+    for (let i = buttonColors.length - 1; i >= 0; i--) {
       if (buttonColors[i] === "green") {
         const [x, y] = indexToCoordinates(i);
         coordinates.push(x, y);
