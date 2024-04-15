@@ -1,0 +1,10 @@
+.custom-container {
+  border: 10px solid #026779; /* Border thickness */
+  padding: 20px; /* Padding to increase space between border and content */
+  background-color: #000000; /* Background color */
+  margin: 0px 20px 20px 20px;
+}
+
+.custom-button {
+  margin: 0px 20px 10px 10px;
+}
