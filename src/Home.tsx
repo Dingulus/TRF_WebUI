@@ -8,9 +8,15 @@ import "./Universal.css";
 // make this [0, 0, 0, 1, 0, 2, 0, 3, 1, 0]
 
 export default function Home() {
-  const numRows = 8;
-  const numCols = 12;
+  const [numRows, setNumRows] = useState(8);
+  const [numCols, setNumCols] = useState(12);
   const buttonSize = 45; // Adjust the size of each button
+
+  // Function to hand grid size change
+  const changeGridSize = (rows, cols) => {
+    setNumRows(rows);
+    setNumCols(cols);
+  };
 
   // State to keep track of button colors
   const [buttonColors, setButtonColors] = useState(
@@ -125,13 +131,22 @@ export default function Home() {
   return (
     <>
       <Header />
+      <Button className="custom-button" onClick={() => changeGridSize(4, 6)}>
+        24-Well
+      </Button>
+      <Button className="custom-button" onClick={() => changeGridSize(8, 12)}>
+        96-Well
+      </Button>
+      <Button className="custom-button" onClick={() => changeGridSize(16, 24)}>
+        384-Well
+      </Button>
       <Row>
-        <Col xs={8}>
+        <Col xs={9}>
           <Container id="buttonGrid" className="custom-container" fluid>
             {renderButtons()}
           </Container>
         </Col>
-        <Col xs={4}>
+        <Col xs={3}>
           <textarea
             rows={18}
             cols={50}
